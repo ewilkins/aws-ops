@@ -74,10 +74,14 @@ module AWSCLI
 	end
 
 =begin rdoc
-	Runs an AWS command. The command should *not* include the leading +aws+ literal.
-	The method will parse the resulting JSON, and return it as a corresponding
-	+Hash+ or +Array+. An +AWSCLIError+ exception will be raised if the command
-	fails, or if the prerequisites for the utility have not been met.
+	Runs an AWS command. The method will parse the resulting JSON, and return it
+	as a corresponding +Hash+ or +Array+. An +AWSCLIError+ exception will be
+	raised if the command fails, or if the prerequisites for the utility have not
+	been met.
+	
+	==== Attributes
+	
+	* +cmd+ - The command to run. This should *not* include the leading +aws+ literal.
 =end
 	def AWSCLI.run(cmd)
 		raise AWSCLIError, 'AWS command line utility prerequisites have not been met' unless AWSCLI.prereqs?
