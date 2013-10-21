@@ -30,7 +30,7 @@ module AWSCLI
 =begin rdoc
 	Generic exception class.
 =end
-	class AWSCLIError < RuntimeError
+	class AWSCLIError < StandardError
 	end
 
 =begin rdoc
